@@ -12,22 +12,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const priceItemCurrencies = document.querySelectorAll('.price-item__сurrency');
     const currencyElements = document.querySelectorAll('.currency');
     const priceElements = document.querySelectorAll('.cost');
-
+    
     const rubleToDollar = 90;
-
+    const rubleToEuro = 100;
+    const euroToDollar = 1.1089;
+    
+    let currentCurrencyIndex = 0;
+    
     priceItemCurrencies.forEach(item => {
         item.addEventListener('click', () => {
             currencyElements.forEach((currencyItem, index) => {
                 const priceItem = priceElements[index];
-
-                if (currencyItem.innerText == '$') {
+    
+                if (currentCurrencyIndex === 0) {
                     currencyItem.innerText = '₽';
-                    priceItem.innerText = parseInt(priceItem.innerText) * rubleToDollar;
+                    priceItem.innerText = Math.ceil(parseInt(priceItem.innerText) * rubleToDollar);
+                } else if (currentCurrencyIndex === 1) {
+                    currencyItem.innerText = '€';
+                    priceItem.innerText = Math.round(parseInt(priceItem.innerText) / rubleToEuro);
                 } else {
                     currencyItem.innerText = '$';
-                    priceItem.innerText = parseInt(priceItem.innerText) / rubleToDollar;
+                    priceItem.innerText = Math.ceil(parseInt(priceItem.innerText) * euroToDollar);
                 }
             });
+    
+            currentCurrencyIndex = (currentCurrencyIndex + 1) % 3;
         });
     });
 
