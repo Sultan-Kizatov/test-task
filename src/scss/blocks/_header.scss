@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 85px;
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    &__login {
+        color: rgba(255, 255, 255, 0.80);
+        font-size: 12px;
+        font-weight: 400;
+        text-decoration: none;
+        &:hover {
+            color: #FFF;
+            font-weight: 600;
+        }
+    }
+    &__signup {
+        padding: 9px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 114px;
+        border-radius: 8px;
+        border: 1px solid #D66567;
+        background: #BC4749;
+        color: #FFF;
+        font-size: 12px;
+        font-weight: 500;
+        text-decoration: none;
+        &:hover {
+            color: #FFF;
+            background: rgba(188, 71, 73, 0.90);
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    span {
+        color: #FFF;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 130%;
+        text-decoration: line-through;
+    }
+}

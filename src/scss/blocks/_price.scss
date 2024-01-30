@@ -1,0 +1,163 @@
+.price {
+    &__title {
+        margin-top: 60px;
+        color: #FFF;
+        font-size: 42px;
+        font-weight: 600;
+        text-align: center;
+    }
+    &__items {
+        margin: 0 auto;
+        margin-top: 70px;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &-item {
+        position: relative;
+        border-radius: 12px;
+        background: #6A994E;
+        box-shadow: 0px 4px 95px 0px rgba(0, 0, 0, 0.25);
+        padding: 40px 0px 30px;
+        min-height: 600px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        &.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        &:nth-child(1) {
+            right: -30px;
+        }
+        &:nth-child(2) {
+            top: -35px;
+            z-index: 1;
+            background: #1D252B;
+            box-shadow: 0px 4px 95px 0px rgba(0, 0, 0, 0.15);
+            padding: 45px 0px;
+            .price-item__top {
+                border: none;
+            }
+            .price-item__btn {
+                background: #BC4749;
+                border: 1px solid #D66567;
+                &:hover {
+                    background: rgba(188, 71, 73, 0.90);
+                }
+            }
+        }
+        &:nth-child(3) {
+            left: -30px;
+        }
+        &__top {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            padding: 0 60px 25px;
+        }
+        &__bot {
+            padding: 20px 60px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &__title {
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        &__descr {
+            color: rgba(255, 255, 255, 0.80);
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 140%;
+        }
+        &__features {
+            color: #FFF;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        &__subtitle {
+            margin-top: 10px;
+            color: #FFF;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        &__list {
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        &__item {
+            position: relative;
+            padding-left: 18px;
+            color: #FFF;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 130%;
+            &::before {
+                content: url('../icons/polygon.svg');
+                position: absolute;
+                left: 0;
+            }
+        }
+        &__price {
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+        }
+        &__сurrency {
+            span {
+                color: #FFF;
+                cursor: pointer;
+                &:first-child {
+                    font-size: 11px;
+                    font-weight: 500;
+                    position: relative;
+                    bottom: 25px;
+                }
+                &:last-child {
+                    font-size: 38px;
+                    font-weight: 800;
+                }
+            }
+        }
+        &__month {
+            color: rgba(255, 255, 255, 0.70);
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        &__descr {
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+        }
+        &__btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #FFF;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 8px;
+            border: 1px solid #D0D0D0;
+            box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.10);
+            width: 65%;
+            &:hover {
+                color: #FFF;
+                background: #BC4749;
+            }
+        }
+    }
+}
