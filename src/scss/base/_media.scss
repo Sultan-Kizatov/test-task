@@ -25,16 +25,25 @@
 }
 
 @media screen and (max-width: 767.98px) {
+    .container {
+        padding: 0;
+    }
     .main {
-        padding: 20px 0 50px;
+        padding: 0;
+        padding-bottom: 50px;
     }
     .header {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        padding: 20px;
+        backdrop-filter: blur(8px);
         &__right {
             display: none;
         }
     }
     .menu {
-        position: absolute;
+        position: fixed;
         z-index: 2;
         right: 0;
         top: -100vh;
@@ -86,6 +95,7 @@
         }
     }
     .price {
+        padding: 0 20px;
         &__title {
             font-size: 28px;
         }
